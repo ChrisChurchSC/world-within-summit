@@ -269,8 +269,8 @@ export default function Summit() {
             fontFamily: 'var(--font-b)', fontSize: 16, lineHeight: 1.75,
             color: 'rgba(255,244,226,0.6)', marginBottom: 24,
           }}>
-            Wealth leaves communities. Businesses get bought up. Workers lose ownership of what they build.
-            It has been happening for decades. And it is accelerating.
+            Wealth left communities. Businesses got bought up. Workers lost ownership of what they have built.
+            It happened for decades. And it accelerated.
           </p>
 
           <p style={{
@@ -278,7 +278,7 @@ export default function Summit() {
             color: 'rgba(255,244,226,0.6)', marginBottom: 24,
           }}>
             This June, we are gathering the people doing something about it. The 2nd Annual World Within
-            Summit returns to Helena, Montana, built around one question:
+            Summit returns to our home base in Helena, Montana, built around one question:
           </p>
 
           <div style={{
