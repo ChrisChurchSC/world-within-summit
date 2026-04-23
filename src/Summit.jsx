@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import { SeoHead } from './SeoHead.jsx'
 import Reveal from './Reveal.jsx'
 
+const BASE = import.meta.env.BASE_URL
+
 function trackTicketClick(location) {
   if (typeof window.gtag === 'function') {
     window.gtag('event', 'get_tickets_click', { event_location: location })
@@ -41,7 +43,7 @@ function SummitNav() {
         transition: 'background 0.2s, border 0.2s',
       }}>
         <a href="https://www.worldwithin.org">
-          <img src="/assets/logo-wordmark-white.svg" alt="World Within" style={{ height: 14, opacity: 0.85 }} />
+          <img src={`${BASE}assets/logo-wordmark-white.svg`} alt="World Within" style={{ height: 14, opacity: 0.85 }} />
         </a>
         <a href={TICKET_URL} target="_blank" rel="noopener noreferrer" onClick={() => trackTicketClick('mobile_nav')} style={{
           fontFamily: 'var(--font-b)', fontSize: 11, fontWeight: 700,
@@ -59,7 +61,7 @@ function SummitNav() {
       <div className={`nav-preview${scrolled ? ' nav-preview--scrolled' : ''}`}>
         <div className="nav__left" />
         <a href="https://www.worldwithin.org" className="nav__logo" aria-label="World Within">
-          <img src="/assets/logo-wordmark-white.svg" alt="World Within" />
+          <img src={`${BASE}assets/logo-wordmark-white.svg`} alt="World Within" />
         </a>
         <div className="nav__right">
           <a href="https://worldwithin.app.neoncrm.com/forms/world-within-donations" target="_blank" rel="noopener noreferrer" className="nav__donate">Donate</a>
@@ -334,7 +336,7 @@ export default function Summit() {
           }}>Summit 2025</div>
 
           <video
-            src="/assets/summit-2025-sizzle.mp4"
+            src={`${BASE}assets/summit-2025-sizzle.mp4`}
             controls
             playsInline
             style={{
@@ -360,7 +362,7 @@ export default function Summit() {
           <div className="wf-grid-2" style={{ gap: 'clamp(24px, 5vw, 64px)', alignItems: 'start' }}>
 
             <img
-              src="/assets/afc-wimbledon.png"
+              src={`${BASE}assets/afc-wimbledon.png`}
               alt="AFC Wimbledon crest — Power to the People"
               style={{
                 width: '100%', display: 'block',
@@ -605,7 +607,7 @@ export default function Summit() {
 
       <footer style={{ borderTop: '1px solid rgba(255,244,226,0.06)', padding: isMobile ? '32px 20px' : '40px 64px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 24 }}>
         <a href="https://www.worldwithin.org" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/logo-wordmark-white.svg" alt="World Within" style={{ height: 20, opacity: 0.6 }} />
+          <img src={`${BASE}assets/logo-wordmark-white.svg`} alt="World Within" style={{ height: 20, opacity: 0.6 }} />
         </a>
         <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
           {[
