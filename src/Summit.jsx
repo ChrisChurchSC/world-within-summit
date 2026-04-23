@@ -360,6 +360,7 @@ export default function Summit() {
       <Reveal>
       <div style={{ borderBottom: '1px solid rgba(255,244,226,0.06)' }}>
         <div className="wf-section--md">
+          <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <div style={{
             fontFamily: 'var(--font-b)', fontSize: 10, fontWeight: 700,
             letterSpacing: '0.14em', textTransform: 'uppercase',
@@ -394,8 +395,8 @@ export default function Summit() {
                 fontFamily: 'var(--font-b)', fontSize: 15, lineHeight: 1.75,
                 color: 'rgba(255,244,226,0.6)', marginBottom: 20,
               }}>
-                Rich financiers bought the original Wimbledon FC and moved it 60 miles away. So the fans
-                built their own club from scratch and took it back to professional football. <em>Power to
+                Rich financiers bought Wimbledon FC and moved it 60 miles away. So the fans built
+                AFC Wimbledon from scratch and took it back to professional football. <em>Power to
                 the People</em> is the story of how that happened.
               </p>
 
@@ -404,7 +405,7 @@ export default function Summit() {
                 color: 'rgba(255,244,226,0.6)', marginBottom: 20,
               }}>
                 Our economy, like our sports teams, should not be a game owned, controlled, and played by
-                billionaires, Saudi princes, or private equity. The Wimbledon story is not an anomaly.
+                billionaires, Saudi princes, or private equity. The AFC Wimbledon story is not an anomaly.
                 It is a blueprint.
               </p>
 
@@ -416,6 +417,7 @@ export default function Summit() {
               </p>
             </div>
 
+          </div>
           </div>
         </div>
       </div>
