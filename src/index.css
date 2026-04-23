@@ -1,0 +1,290 @@
+/* ============================================================
+   Fonts
+   ============================================================ */
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('/fonts/switzer/Switzer-Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   CSS Variables
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --bg: #000;
+  --cream: #fff4e2;
+  --green: #acc28c;
+  --strip-w: 48px;
+  --font-d: 'Switzer', sans-serif;
+  --font-b: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-m: ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+p { margin: 0; }
+
+a { text-decoration: none; color: inherit; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-b);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   Nav Preview
+   ============================================================ */
+.nav-preview {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 20px 48px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 100%);
+  background-color: #080808;
+  border: 1px solid rgba(255,244,226,0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: padding 0.35s cubic-bezier(0.22,1,0.36,1),
+              background 0.35s ease,
+              backdrop-filter 0.35s ease,
+              border-color 0.35s ease;
+}
+
+.nav-preview--scrolled {
+  padding: 11px 48px;
+  background: rgba(8,8,8,0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-color: rgba(255,244,226,0.07);
+}
+
+.nav-preview--scrolled .nav__logo img { height: 17px; }
+.nav-preview--scrolled .nav__donate   { padding: 6px 16px; }
+
+.nav__left,
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+}
+
+.nav__right { justify-content: flex-end; }
+
+.nav__link {
+  font-family: var(--font-b);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,244,226,0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  position: relative;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 100%; height: 1px;
+  background: var(--cream);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1);
+}
+
+.nav__link:hover { color: var(--cream); }
+.nav__link:hover::after { transform: scaleX(1); }
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 32px;
+  transition: opacity 0.2s;
+}
+
+.nav__logo:hover { opacity: 0.7; }
+
+.nav__logo img {
+  height: 22px;
+  width: auto;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1),
+              height 0.35s cubic-bezier(0.22,1,0.36,1);
+}
+
+.nav__logo:hover img { transform: scale(0.97); }
+
+.nav__donate {
+  font-family: var(--font-b);
+  font-size: 11px;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: var(--green);
+  border: 1px solid var(--green);
+  padding: 8px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.nav__donate:hover {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: #000;
+}
+
+/* ============================================================
+   Wireframe layout utilities
+   ============================================================ */
+.wf-strip {
+  position: fixed; top: 0; width: 1px; height: 100vh;
+  background: rgba(255,244,226,0.06); pointer-events: none; z-index: 10;
+}
+.wf-strip--left  { left: 24px; }
+.wf-strip--right { right: 24px; }
+
+.wf-section--md { padding: 80px 64px; }
+
+.wf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; }
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-b);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease,
+              transform 0.2s cubic-bezier(0.22,1,0.36,1),
+              background 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease;
+}
+
+.btn:hover  { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn--primary {
+  height: 48px;
+  padding: 0 28px;
+  background: var(--cream);
+  color: #000;
+}
+
+.btn--primary:hover { background: var(--green); }
+
+/* ============================================================
+   Animations
+   ============================================================ */
+@keyframes ww-rise-sm {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ww-page {
+  animation: ww-rise-sm 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.05s;
+}
+
+.ww-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ww-reveal.ww-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+  .wf-strip    { display: none; }
+  .wf-section--md { padding: 56px 32px; }
+  .wf-grid-2  { grid-template-columns: 1fr; }
+  .nav-preview { display: none; }
+}
+
+@media (max-width: 600px) {
+  .wf-section--md { padding: 40px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ww-reveal,
+  .ww-page,
+  .btn {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
