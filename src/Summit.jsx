@@ -173,16 +173,20 @@ export default function Summit() {
               { label: 'RSVP by',  value: 'May 26, 2026' },
             ].map(d => (
               <div key={d.label} style={{
-                display: 'flex', justifyContent: 'space-between', alignItems: 'baseline',
+                display: 'flex',
+                flexDirection: isMobile ? 'column' : 'row',
+                justifyContent: 'space-between',
+                alignItems: isMobile ? 'flex-start' : 'baseline',
+                gap: isMobile ? 4 : 0,
                 borderTop: '1px solid rgba(255,244,226,0.06)', paddingTop: 12,
               }}>
                 <span style={{
-                  fontFamily: 'var(--font-m)', fontSize: 9, letterSpacing: '0.1em',
-                  textTransform: 'uppercase', color: 'rgba(255,244,226,0.25)',
+                  fontFamily: 'var(--font-m)', fontSize: 10, letterSpacing: '0.1em',
+                  textTransform: 'uppercase', color: 'var(--green)',
                 }}>{d.label}</span>
                 <span style={{
-                  fontFamily: 'var(--font-b)', fontSize: 13,
-                  color: 'rgba(255,244,226,0.6)',
+                  fontFamily: 'var(--font-b)', fontSize: isMobile ? 17 : 15,
+                  fontWeight: 600, color: 'var(--cream)',
                 }}>{d.value}</span>
               </div>
             ))}
@@ -330,9 +334,9 @@ export default function Summit() {
       <div style={{ borderBottom: '1px solid rgba(255,244,226,0.06)' }}>
         <div className="wf-section--md">
           <div style={{
-            fontFamily: 'var(--font-b)', fontSize: 10, fontWeight: 700,
-            letterSpacing: '0.14em', textTransform: 'uppercase',
-            color: 'rgba(255,244,226,0.3)', marginBottom: 24,
+            fontFamily: 'var(--font-d)', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 700,
+            letterSpacing: '-0.02em', textTransform: 'uppercase',
+            color: 'var(--cream)', marginBottom: 24,
           }}>Summit 2025</div>
 
           <video
@@ -448,8 +452,8 @@ export default function Summit() {
               color: 'rgba(255,244,226,0.3)',
             }}>This year's themes</div>
             <div style={{
-              fontFamily: 'var(--font-m)', fontSize: 10, letterSpacing: '0.06em',
-              color: 'rgba(255,244,226,0.2)',
+              fontFamily: 'var(--font-m)', fontSize: 11, letterSpacing: '0.06em',
+              color: 'rgba(255,244,226,0.55)',
             }}>4 themes · 3 days</div>
           </div>
 
