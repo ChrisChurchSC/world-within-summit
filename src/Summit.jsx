@@ -337,6 +337,7 @@ export default function Summit() {
             fontFamily: 'var(--font-d)', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 700,
             letterSpacing: '-0.02em', textTransform: 'uppercase',
             color: 'var(--cream)', marginBottom: 24,
+            maxWidth: 800, margin: '0 auto 24px',
           }}>Summit 2025</div>
 
           <video
@@ -345,8 +346,10 @@ export default function Summit() {
             playsInline
             style={{
               width: '100%',
+              maxWidth: 800,
               display: 'block',
               background: '#000',
+              margin: '0 auto',
             }}
           />
         </div>
