@@ -338,7 +338,7 @@ export default function Summit() {
             letterSpacing: '-0.02em', textTransform: 'uppercase',
             color: 'var(--cream)', marginBottom: 24,
             maxWidth: 800, margin: '0 auto 24px',
-          }}>Summit 2025</div>
+          }}>World Within Summit 2025</div>
 
           <video
             src={`${BASE}assets/summit-2025-sizzle.mp4`}
